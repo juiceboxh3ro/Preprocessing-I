@@ -133,7 +133,7 @@ table {
 }
 html,
 body {
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
 }
 nav {
@@ -144,16 +144,24 @@ nav ul {
   flex-direction: row;
   justify-content: flex-end;
 }
+nav ul li .active {
+  color: #fff;
+  background-color: #ecf0f1;
+}
 nav ul li a {
   font-size: 1.8rem;
   color: #333;
   text-decoration: none;
-  padding: 0 20px;
+  padding: 23px 20px;
   font-weight: 600;
+  height: 100%;
+}
+nav ul li a:hover {
+  color: #fff;
+  background-color: #ecf0f1;
 }
 .container.main {
   background-color: #ecf0f1;
-  border-radius: 5px;
   margin-bottom: 20px;
 }
 .container.main .main-content {
@@ -250,7 +258,7 @@ nav ul li a {
   background-color: #ecf0f1;
 }
 .work-hist table tr:hover {
-  background-color: #7f8c8d;
+  background-color: #D4D8D8;
 }
 .work-hist table tr th,
 .work-hist table tr td {

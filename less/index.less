@@ -13,6 +13,8 @@
 @btn-color: #95a5a6;
 @btn-color-hvr: #7f8c8d;
 
+@table-hvr: #D4D8D8;
+
 @dark-font-main: #333;
 @light-font-main: #fff;
 
@@ -82,7 +84,7 @@ table {
 }
 
 html, body {
-	width: 90vw;
+	width: 80vw;
 	margin: 0 auto;
 }
 
@@ -95,19 +97,31 @@ nav {
 		flex-direction: row;
 		justify-content: flex-end;
 
-		li a {
+		li {
+			.active {
+				color: @light-font-main;
+				background-color: @main-bg-color;
+			}
+			
+			a {
 			font-size: 1.8rem;
 			color: @dark-font-main;
 			text-decoration: none;
-			padding: 0 20px;
+			padding: 23px 20px;
 			font-weight: 600;
+			height: 100%;
+
+				&:hover {
+					color: @light-font-main;
+					background-color: @main-bg-color;
+				}
+			}
 		}
 	}
 } // End nav
 
 .container.main {
 	background-color: @main-bg-color;
-	border-radius: 5px;
 	margin-bottom: 20px;
 	
 	.main-content {
@@ -225,7 +239,7 @@ nav {
 			}
 
 			&:hover {
-				background-color: @btn-color-hvr;
+				background-color: @table-hvr;
 			}
 
 			th, td {
