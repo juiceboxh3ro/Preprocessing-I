@@ -4,6 +4,35 @@
    License: none (public domain)
 */
 
+// Here's some variables
+
+@main-font: 'Lato', sans-serif;
+
+@main-bg-color: #ecf0f1;
+@border-color: #bdc3c7;
+@btn-color: #95a5a6;
+@btn-color-hvr: #7f8c8d;
+
+@table-hvr: #D4D8D8;
+
+@dark-font-main: #333;
+@light-font-main: #fff;
+
+// dark blue? #34495e
+// darker blue? #2c3e50
+
+// Here's some mix-ins as requested
+
+.flex-left() {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.h3mix() {
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,12 +46,13 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+	font-family: @main-font;
+	font-size: 62.5%;
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
+	max-width: 100%;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -54,6 +84,186 @@ table {
 }
 
 html, body {
-    height: 100%;
+	width: 80vw;
+	margin: 0 auto;
 }
+
+// Here's my CSS now
+nav {
+	margin: 25px 0;
+	
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		li {
+			.active {
+				color: @light-font-main;
+				background-color: @main-bg-color;
+			}
+			
+			a {
+			font-size: 1.8rem;
+			color: @dark-font-main;
+			text-decoration: none;
+			padding: 23px 20px;
+			font-weight: 600;
+			height: 100%;
+
+				&:hover {
+					color: @light-font-main;
+					background-color: @main-bg-color;
+				}
+			}
+		}
+	}
+} // End nav
+
+.container.main {
+	background-color: @main-bg-color;
+	margin-bottom: 20px;
+	
+	.main-content {
+		.flex-left();
+		flex-direction: column;
+		margin: 0 30px;
+		border-bottom: 1px solid @border-color;
+		
+		.smilingidiot {
+			margin: 50px 0 10px;
+
+			img {
+				width: 30%;
+			}
+		}
+
+		h1 {
+			font-size: 6rem;
+			line-height: 1.5;
+		}
+		h2 {
+			font-size: 3rem;
+			line-height: 1.5;
+		}
+	} // End .main-content
+
+	.support-content {
+		margin: 20px 30px;
+
+		p {
+			font-size: 1.6rem;
+		}
+	} // End .support-content
+
+	.btn-wrap {
+		margin: 0 30px;
+		padding-bottom: 40px;
+
+		button {
+			font-size: 2rem;
+			padding: 15px;
+			color: @light-font-main;
+			border: none;
+			border-radius: 3px;
+			background-color: @btn-color;
+
+			&:hover {
+				cursor: pointer;
+				background-color: @btn-color-hvr;
+			}
+		} // End button
+
+	} // End .btn-wrap
+
+} // End .container
+
+.skills {
+	display: flex;
+	justify-content: space-between;
+
+	.left {
+		width: 48%;
+
+		h3 {
+			.h3mix();
+		}
+
+		p {
+			font-size: 1.8rem;
+			line-height: 1.5;
+		}
+	} // End .left
+
+	.right {
+		width: 48%;
+
+		h3 {
+			.h3mix();
+		}
+
+		ul {
+			border: 1px @border-color solid;
+			border-radius: 5px;
+			width: 100%;
+			
+			li {
+				border-bottom: 1px @border-color solid;
+				font-size: 1.8rem;
+				padding: 15px;
+			
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	} // End .right
+	
+} // End .skills
+
+.work-hist {
+	h3 {
+		.h3mix();
+	}
+
+	table {
+		width: 100%;
+		margin-bottom: 40px;
+		
+		tr {
+			margin: 0 auto;
+			width: 20%;
+
+			&:nth-child(even) {
+				background-color: @main-bg-color;
+			}
+
+			&:hover {
+				background-color: @table-hvr;
+			}
+
+			th, td {
+				padding: 15px;
+				border-top: 1px solid @border-color;
+				text-align: left;
+				font-size: 2rem;
+			}
+		}
+	}
+} // End .work-hist
+
+footer {
+	.foot-container {
+		background: @btn-color;
+		text-align: center;
+		padding: 25px;
+		p {
+			color: @light-font-main;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+
+
 
